@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update]
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   def show
     @prototypes = @user.prototypes
@@ -13,6 +13,12 @@ class UsersController < ApplicationController
     redirect_to :root, notice: 'Your user infomation was successfully updated'
   end
 
+  def destroy
+
+     if @user.uer_id == current_user.id
+       @user.destroy
+     end
+   end
   private
 
   def set_user
