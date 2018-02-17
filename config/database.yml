@@ -9,17 +9,17 @@
 # And be sure to use new-style password hashing:
 #   http://dev.mysql.com/doc/refman/5.0/en/old-client.html
 #
-# default: &default
-#   adapter: mysql2
-#   encoding: utf8
-#   pool: 5
-#   username: root
-#   password:
-#   socket: /tmp/mysql.sock
-#
-# development:
-#   <<: *default
-#   database: protospace-in-dev_development
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  username: root
+  password:
+  socket: /tmp/mysql.sock
+
+development:
+  <<: *default
+  database: protospace-in-dev_development
 #
 # # Warning: The database defined as "test" will be erased and
 # # re-generated from your development database when you run "rake".
@@ -47,10 +47,10 @@
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-production:
-  <<: *default
-  database: protospace-in-dev_production
-  username: protospace-in-dev
-  password: <%= ENV['PROTOSPACE-IN-DEV_DATABASE_PASSWORD'] %>
-  url:  <%= ENV["DATABASE_URL"] %>
-  pool: <%= ENV["DB_POOL"] || ENV['MAX_THREADS'] || 5 %>
+# production:
+#   <<: *default
+#   database: protospace-in-dev_production
+#   username: protospace-in-dev
+#   password: <%= ENV['PROTOSPACE-IN-DEV_DATABASE_PASSWORD'] %>
+#   url:  <%= ENV["DATABASE_URL"] %>
+#   pool: <%= ENV["DB_POOL"] || ENV['MAX_THREADS'] || 5 %>
