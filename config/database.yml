@@ -20,6 +20,11 @@ default: &default
 development:
   <<: *default
   database: protospace-in-dev_development
+
+production:
+  <<: *default
+  adapter: postgresql
+  database: protospace-in-dev_development
 #
 # # Warning: The database defined as "test" will be erased and
 # # re-generated from your development database when you run "rake".
@@ -47,10 +52,3 @@ development:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-# production:
-#   <<: *default
-#   database: protospace-in-dev_production
-#   username: protospace-in-dev
-#   password: <%= ENV['PROTOSPACE-IN-DEV_DATABASE_PASSWORD'] %>
-#   url:  <%= ENV["DATABASE_URL"] %>
-#   pool: <%= ENV["DB_POOL"] || ENV['MAX_THREADS'] || 5 %>
