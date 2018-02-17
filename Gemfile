@@ -21,7 +21,7 @@ gem 'rmagick'
 gem 'rails_12factor', group: :production
 gem 'puma'
 gem 'kaminari'
-gem 'pg', '1.0.0', groups: %w(production), require: false
+gem 'pg', groups: %w(production), require: false
 
 group :development, :test do
   gem 'byebug'
