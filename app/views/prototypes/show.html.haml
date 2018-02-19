@@ -14,10 +14,11 @@
             .degree
               = @prototype.user.position
         .media-right
-          %h5
-          = link_to 'EDIT', "/prototypes/#{@prototype.id}/edit", method: :get
-          %h5
-          = link_to 'DELETE', "/prototypes/#{@prototype.id}", method: :delete
+          - if user_signed_in?
+            %h5
+            = link_to 'EDIT', "/prototypes/#{@prototype.id}/edit", method: :get
+            %h5
+            = link_to 'DELETE', "/prototypes/#{@prototype.id}", method: :delete
   .row
     .col-md-9.image-box
       = image_tag(@prototype.set_main_thumbnail.large, class: 'img-responsive img-size-fix', style: "margin: 0 auto;")
