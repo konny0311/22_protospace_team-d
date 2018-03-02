@@ -5,11 +5,14 @@
 .filter-nav
   .container
     .row
+      %form#sort-new-prototype
+      %input#aaa{type: "button", value: "Popular"}
+      %input#bbb{type: "button", value: "Newest"}
       %ul.nav.nav-pills.col-lg-11
         %li.btn-default.btn-popular
-          = link_to "Popular", "#"
-        %li.btn-default.btn-popular
-          = link_to "Newest", "#"
+          = link_to "Popular", "#", class: 'btn-popular'
+        %li.btn-default.btn-new
+          = link_to "Newest", "#", class: 'btn-new'
       = link_to "VIEW TAGS", "#", class: "btn btn-default col-lg-1"
 
 .container.proto-list
