@@ -8,17 +8,19 @@
         .media-body
           %h4#top-aligned-media.media-heading
             = @prototype.title
+          .proto-function
+          - if user_signed_in? && @prototype.user_id == current_user.id
+            .display-proto-edit-delete-function
+              .btn.btn-xs.navbar-inverse.btn-proto-edit
+                = link_to "EDIT", edit_prototype_path(@prototype), class: "btn-prototype-edit"
+              .btn.btn-xs.navbar-inverse.btn-proto-delete
+                = link_to "DELETE", prototype_path(@prototype), method: :delete, class: "btn-prototype-delete"
           .proto-user
             by
             = link_to "#{@prototype.user.name}", user_path(@prototype.user)
             .degree
               = @prototype.user.position
-        .media-right
-          - if @prototype.user_id == current_user.id
-            %h5
-            = link_to 'EDIT', "/prototypes/#{@prototype.id}/edit", method: :get
-            %h5
-            = link_to 'DELETE', "/prototypes/#{@prototype.id}", method: :delete
+
   .row
     .col-md-9.image-box
       = image_tag(@prototype.set_main_thumbnail.large, class: 'img-responsive img-size-fix', style: "margin: 0 auto;")
