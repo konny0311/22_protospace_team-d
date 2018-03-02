@@ -640,3 +640,24 @@ body {
   border-color: #ebccd1;
   color: #a94442;
 }
+
+
+.comment{
+  p{
+    font-size: 20px;
+    padding-left: 40px;
+    padding-top: 40px
+  }
+  &__form{
+    textarea{
+      height:100px;
+      width:500px
+    }
+  }
+  &__show{
+    font-size: 30px;
+
+  }
+  }
+
+
